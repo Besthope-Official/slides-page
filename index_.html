@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, user-scalable=no">
+	<title>机器学习: 决策树 概念和计算</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/slides.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/night-owl.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<section>
+					<h1 class="title">决策树: 概念和计算</h1>
+				</section>
+			</section>
+			<section>
+				<section data-markdown>
+					<textarea data-template>
+					# ID3 算法
+					
+					## 信息熵
+					
+					$$E(D)=\sum_{i=1}^{n} -p_i\log_2p_i$$
+					
+					- 其实就是 impurity
+					
+					<br>
+					<br>
+
+					## 信息增益
+					
+					$$g(D,A)=E(D)-\sum_{v\in values(A)}\frac{|D_v|}{|D|}\cdot E(D_v)$$
+					
+					- 根据这次划分计算一个加权平均
+					</textarea>
+				</section>
+			</section>
+			<section data-markdown>
+				<textarea data-template>
+					# Slide 1
+					A paragraph with some text and a [link](https://hakim.se).
+					---
+					# Slide 2
+					---
+					# Slide 3
+					- Item 1
+					- Item 2
+					123
+				</textarea>
+			</section>
+			<section>
+				<span class="fragment fade-in">
+					<span class="fragment highlight-red">
+						<p>找到你了</p>
+						<p>找到你了</p>
+						<p>找到你了</p>
+						<p>找到你了</p>
+						<p>找到你了</p>
+						<p>找到你了</p>
+						<p>找到你了</p>
+						<p>找到你了</p>
+					</span>
+				</span>
+			</section>
+			<section data-markdown>
+				<script type="text/template">
+					- Item 1 <!-- .element: class="fragment" data-fragment-index="2" -->
+					- Item 2 <!-- .element: class="fragment" data-fragment-index="1" -->
+				</script>
+			</section>
+			<section>
+				<h2>The Lorenz Equations</h2>
+				\[\begin{aligned}
+				\dot{x} &amp; = \sigma(y-x) \\
+				\dot{y} &amp; = \rho x - y - xz \\
+				\dot{z} &amp; = -\beta z + xy
+				\end{aligned} \]
+			</section>
+			<section>
+				<code>printf</code>
+				<pre><code data-trim data-noescape data-line-numbers>
+					function add(a, b) {
+				  return a + b;
+				}
+				console.log(add(2, 3)); // Output: 5
+			  </code></pre>
+				<pre><code><script type="text/template">
+				sealed class Either<out A, out B> {
+					data class Left<out A>(val a: A) : Either<A, Nothing>()
+					data class Right<out B>(val b: B) : Either<Nothing, B>()
+					}
+				</script></code></pre>
+			</section>
+			<footer>
+				<script type="text/javascript">
+					document.write(document.title)</script>
+			</footer>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			width: 960,
+			height: 720,
+			hash: true,
+			pdfMaxPagesPerSlide: 1,
+			<!-- view: 'scroll', -->
+			center: false,
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
+		});
+		Reveal.on('make-it-pop', () => {
+			console.log('✨');
+		});
+	</script>
+</body>
+
+</html>
