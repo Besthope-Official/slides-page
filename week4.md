@@ -32,7 +32,11 @@
 
 ### SWUFE-OJ
 
-TBD
+- 文档[上线](https://singularity-backend.gitbook.io/backend-online-doc/swufe-oj/readme): 其实就是之前办训练营用的 gitbook 的新页
+- 设置改成了密钥(不暴露数据库密码了), 本地配置参考 README
+  - 对应的要改下数据库的密码啥的, 防止被人翻 git log 然后 gg
+- 用户模块用 [SimpleJWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/) 重新改了下, 加入 Redis 实现了 token 缓存
+- 把提交 submission 模块的代码修改了下
 
 <!-- slide -->
 
@@ -52,24 +56,6 @@ TBD
     - plan A: 强制推送 `git push -f`
     - plan B?
   - 什么是 `git revert`?
-
-<!-- slide -->
-
-# 说些闲话
-
-### 画饼时间
-
-当你走出去实习或者打比赛, 你就会感受到这种差距:
-
-- 我可是科班开发出身的! 就是比你们厉害. 口亨😊
-
-确保*了解*这些概念, 它们便会伴随大家开发的生涯**一直**走下去...
-
-- 只要你还从事计算机开发相关的工作
-
-这也是开发部对大家的一个小小要求. 你会发现我们一直在强调这些看起来和代码不沾边的东西: **老师课上可不会讲**...
-
-- MIT 还专门出过一门课 [missing semester](https://missing-semester-cn.github.io/), 就花了大笔的时间讲一些 CLI 工具的使用.
 
 <!-- slide -->
 
@@ -101,18 +87,19 @@ Wikipedia: *Software documentation is written text or illustration that accompan
 
 看看优秀开源项目的文档
 
-- [Django](https://docs.djangoproject.com/zh-hans/5.0/)
-- [全栈 FastAPI 项目模板](https://github.com/tiangolo/full-stack-fastapi-template)
+- 框架文档: [Django](https://docs.djangoproject.com/zh-hans/5.0/)
+- 开源项目文档: [全栈 FastAPI 项目模板](https://github.com/tiangolo/full-stack-fastapi-template)
 
 <br>
 <br>
 
 ### 总结
 
-- 要有入门指引 Quick Start
-- 好的示例, demo
-- 详尽的解释, 参考指南...
-- 最后甚至创造出一个新的用户社群!
+- 明确**受众**目标: 用户群体, 开发人员, 部署人员都应当有对应的文档
+- **示例**: 从 Getting Started 开始, 逐步深入
+- 及时**更新**和**版本控制**: 改动版本号 + VCS 管理
+
+Web 应用开发的文档会比上面的简单一些, 我们写的是**接口文档**
 
 <!-- slide -->
 
@@ -280,7 +267,44 @@ Wikipedia: *Software documentation is written text or illustration that accompan
 - `PUT /round/:id` 修改对局记录
 - `GET /rank` 获取排行榜
 
-写到这里, 框架就基本搭好了. 然后你就可以进入快乐的 coding 阶段了.
+对于每个路由, 你需要写清需要哪些参数, 以及不同情况对应的返回结果.
+
+- 请求参数长什么样: jQuery 参数, form-data...
+- 各种情况下的错误码, 错误信息(方便我们写测试)
+- 给出一些示例
+
+<!-- vslide -->
+
+# L1: 排行榜接口设计: 单元测试编写
+
+端口设计完毕, 你可以把代码的接口先写出来(类似于 C 里的声明, Java 里的 interface)
+
+```py
+@app.route('/game', methods=['POST'])
+def start_game():
+    pass
+
+@app.route('/game/<int:game_id>', methods=['PUT'])
+def end_game(game_id):
+    pass
+```
+
+然后着手去写单元测试(下周会讲, 咕咕咕)
+
+<!-- vslide -->
+
+# L1: 排行榜接口设计
+
+真的需要我手写那么多东西吗😵
+
+**相关工具**
+
+- Postman: API 的 IDE
+- Swagger: 例如 `flasgger` 自动生成 `flask` 的接口文档页面
+- showdoc: 可部署在自己的服务器上的开源项目
+- ...
+
+框架基本搭好了, 然后你就可以进入快乐的 coding 阶段了.
 
 ### 总结
 
@@ -317,11 +341,11 @@ Wikipedia: *Software documentation is written text or illustration that accompan
 }
 ```
 
-<!-- slide -->
+<!-- vslide -->
 
 # L1: 后端代码示例
 
-[source code]()
+[source code](https://github.com/Besthope-Official/backend/blob/master/demo/rankings-backend/server.py)
 
 ```py [28-42|45-68|71-87|117-126|129-141|144-162|165-192|195-205]
 # tetris game online
@@ -538,23 +562,16 @@ if __name__ == '__main__':
 
 <!-- slide -->
 
-# 一些问题
-
-- 代码示例中没有处理一些 **corner case**
-  - 平局了怎么办...?
-  - 玩家掉线怎么办...?
-- **单元测试**没写
-  - 都不知道你的后端代码是否正确
-- 有待提高的地方
-  - 积分计算策略: 消了 1000 行但我得到的还是一个固定值
-  - 查询方式: 对用户 query 来 query 去的...
-
-<!-- slide -->
-
 # 本周任务
 
 - 参考完成 tetris-online 接口文档的编写
-- 开发 OJ 的同学: 按照类似的思路, 完善一个 OJ 的技术文档
+  - 不要求像这里描述的一样详细, 你可以迭代更新
+- 开发 OJ 的同学: 按照类似的思路, 如果你有空就去完善 OJ 的技术文档
+  - 开发代码的接着写 🥹
+  - 这是教学周的**第五周**
+  - 下个月底前出 demo 看来很悬
+
+<div align="center"><img src="images/time-is-up.jpg" width="30%" height="30%" alt="meme"></div>
 
 <!-- slide -->
 
