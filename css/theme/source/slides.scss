@@ -81,6 +81,27 @@ $overlayElementFgColor: 240, 240, 240;
     white-space: nowrap;
 }
 
+.reveal .logo {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    width: 15%;
+    height: auto;
+    z-index: 10;
+}
+
+.reveal .timestamp {
+    position: fixed;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    white-space: nowrap;
+}
+
 .reveal .title h1 {
     margin: 0;
 }
@@ -135,18 +156,26 @@ ul li {
     padding-left: 5%;
 }
 
-.reveal footer {
-    font-size: 16px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: black;
-    color: white;
-    text-align: center;
+.reveal .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding: 6px 0;
-    box-sizing: border-box;
-    z-index: 9999;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer-author {
+    padding: 10px;
+    background-color: #191959;
+}
+
+.footer-title {
+    padding: 10px;
+    background-color: black;
 }
 
 .reveal pre {
