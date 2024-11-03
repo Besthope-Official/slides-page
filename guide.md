@@ -22,6 +22,12 @@
 
 # 后端实验 0: Hajime to git
 
+- 配置好 PyCharm 或 VSCode 的 python 开发环境
+- 熟悉命令行工具的使用
+- 了解 Git 的基础操作
+- 利用 git-cz 工具自动生成符合规范的 commit message
+- 能够使用 Github 作为代码托管的平台
+
 fork [后端实验仓库](https://github.com/SingularityLab-SWUFE/backend-labs)
 
 切换到 `lab0` 分支
@@ -34,6 +40,19 @@ git switch lab0
 
 <!-- slide -->
 
-# 第二周: TBD
+# 第二周: 网络基础知识和 Flask 入门
 
-TBD
+- 开始时间: 2024.11.3 20:00:00 UTC+8
+- 地点: 经世楼 C204
+- 网络基础知识和 Flask 入门: [slides](/week2.html) | [doc](https://github.com/Besthope-Official/backend/blob/master/24autumn/03%20Flask%20%E5%85%A5%E9%97%A8.pdf)
+
+<!-- vslide -->
+
+# 后端实验 1: routes and views
+
+- 了解 HTTP 请求可以包含的内容
+- 理解 Flask 的路由规则
+- 在 Flask 里编写简单的视图函数
+- 在 Flask 里渲染模板、处理请求参数、异常处理
+
+实验文档: [doc](https://github.com/Besthope-Official/backend/blob/master/24autumn/lab1.pdf)
