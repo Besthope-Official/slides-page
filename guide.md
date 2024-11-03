@@ -44,7 +44,7 @@ git switch lab0
 
 - 开始时间: 2024.11.3 20:00:00 UTC+8
 - 地点: 经世楼 C204
-- 网络基础知识和 Flask 入门: [slides](/week2.html) | [doc](https://github.com/Besthope-Official/backend/blob/master/24autumn/03%20Flask%20%E5%85%A5%E9%97%A8.pdf)
+- 网络基础知识和 Flask 入门: [slides](week2.html) | [doc](https://github.com/Besthope-Official/backend/blob/master/24autumn/03%20Flask%20%E5%85%A5%E9%97%A8.pdf)
 
 <!-- vslide -->
 
