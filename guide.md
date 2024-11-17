@@ -56,3 +56,12 @@ git switch lab0
 - 在 Flask 里渲染模板、处理请求参数、异常处理
 
 实验文档: [doc](https://github.com/Besthope-Official/backend/blob/master/24autumn/lab1.pdf)
+
+<!-- slide -->
+
+# 第三周: 数据库简介和 Flask ORM
+
+- 开始时间: 2024.11.17 20:00:00 UTC+8
+- 地点: 经世楼 C202
+- 数据库简介和 Flask ORM: [slides](week3.html) | [doc](https://raw.githubusercontent.com/Besthope-Official/backend/refs/heads/master/24autumn/04%20%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%20Flask%20ORM.pdf)
+- 本周没有实验
