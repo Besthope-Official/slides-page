@@ -65,3 +65,13 @@ git switch lab0
 - 地点: 经世楼 C202
 - 数据库简介和 Flask ORM: [slides](week3.html) | [doc](https://raw.githubusercontent.com/Besthope-Official/backend/refs/heads/master/24autumn/04%20%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%20Flask%20ORM.pdf)
 - 本周没有实验
+
+<!-- slide -->
+
+# 第四周: Flask 项目结构
+
+- 开始时间: 2024.12.1 20:00:00 UTC+8
+- 地点: 经世楼 C203
+- Flask 项目结构 [doc](https://raw.githubusercontent.com/Besthope-Official/backend/3f5712133e846217ba813dd40d0502e160cb10c4/24autumn/06%20Flask%20%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.pdf)
+- 本周没有实验
+- 下学期有实践项目
